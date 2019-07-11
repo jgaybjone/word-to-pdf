@@ -61,6 +61,7 @@ public class App {
                                           PdfOptions options,
                                           Map<String, String> params) throws IOException {
         XWPFDocument doc = new XWPFDocument(source);
+
         paragraphReplace(doc.getParagraphs(), params);
         for (XWPFTable table : doc.getTables()) {
             for (XWPFTableRow row : table.getRows()) {
@@ -77,15 +78,16 @@ public class App {
      */
     private static void paragraphReplace(List<XWPFParagraph> paragraphs, Map<String, String> params) {
         if (MapUtils.isNotEmpty(params)) {
-            for (XWPFParagraph p : paragraphs) {
-                for (XWPFRun r : p.getRuns()) {
-                    String content = r.getText(r.getTextPosition());
-                    System.out.println(content);
-                    if (StringUtils.isNotEmpty(content) && params.containsKey(content)) {
-                        r.setText(params.get(content), 0);
-                    }
-                }
-            }
+
+            paragraphs.stream()
+                    //多个流合并
+                    .flatMap(p -> p.getRuns().stream())
+                    .forEach(r -> {
+                        final String content = r.getText(r.getTextPosition());
+                        if (StringUtils.isNotEmpty(content) && params.containsKey(content)) {
+                            r.setText(params.get(content), 0);
+                        }
+                    });
         }
     }
 }

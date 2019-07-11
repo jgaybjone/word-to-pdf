@@ -8,5 +8,6 @@ package com.example
  */
 
 fun main() {
-
+    val a = "大家好，我是abcd"
+    println(a.length)
 }

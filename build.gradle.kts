@@ -28,6 +28,7 @@ dependencies {
     implementation("fr.opensagres.xdocreport:org.apache.poi.xwpf.converter.pdf:1.0.6")
     implementation("org.apache.poi:ooxml-schemas:1.4")
     implementation(kotlin("stdlib-jdk8"))
+    implementation("org.slf4j:slf4j-api:1.7.26")
 }
 
 tasks.withType<KotlinCompile> {
