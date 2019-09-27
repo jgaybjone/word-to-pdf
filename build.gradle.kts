@@ -26,6 +26,8 @@ dependencies {
     implementation("org.eclipse.birt.runtime.3_7_1:com.lowagie.text:2.1.7")
     implementation("fr.opensagres.xdocreport:fr.opensagres.xdocreport.itext.extension:2.0.2")
     implementation("fr.opensagres.xdocreport:org.apache.poi.xwpf.converter.pdf:1.0.6")
+    implementation("cn.afterturn:easypoi-base:4.1.0")
+    implementation("cn.afterturn:easypoi-annotation:4.1.0")
     implementation("org.apache.poi:ooxml-schemas:1.4")
     implementation(kotlin("stdlib-jdk8"))
     implementation("org.slf4j:slf4j-api:1.7.26")
