@@ -5,6 +5,7 @@ import cn.afterturn.easypoi.word.WordExportUtil
 import org.apache.poi.util.Units
 import org.apache.poi.wp.usermodel.HeaderFooterType
 import org.apache.poi.xwpf.usermodel.Document
+import org.apache.poi.xwpf.usermodel.ParagraphAlignment
 import java.io.FileInputStream
 import java.io.FileOutputStream
 
@@ -36,8 +37,8 @@ fun main() {
     val footer = doc.createFooter(HeaderFooterType.DEFAULT)
 
     val paragraph = footer.createParagraph()
-
     val run = paragraph.createRun()
+    paragraph.alignment = ParagraphAlignment.RIGHT
     run.addPicture(FileInputStream("/Users/mac/Desktop/s1.jpg"), Document.PICTURE_TYPE_JPEG, "samplePict.jpeg", Units.toEMU(100.0), Units.toEMU(50.0))
     val oFile = FileOutputStream("/Users/mac/Desktop/word_excel_done.docx")
 
