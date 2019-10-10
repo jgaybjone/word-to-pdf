@@ -20,7 +20,6 @@ repositories {
 }
 
 dependencies {
-    implementation("org.apache.poi:poi:3.10-FINAL")
     implementation("org.apache.commons:commons-collections4:4.4")
     implementation("fr.opensagres.xdocreport:org.apache.poi.xwpf.converter.core:1.0.6")
     implementation("org.eclipse.birt.runtime.3_7_1:com.lowagie.text:2.1.7")
@@ -31,6 +30,9 @@ dependencies {
     implementation("org.apache.poi:ooxml-schemas:1.4")
     implementation(kotlin("stdlib-jdk8"))
     implementation("org.slf4j:slf4j-api:1.7.26")
+    implementation( "commons-beanutils:commons-beanutils:1.9.4")
+    implementation( "com.fasterxml.jackson.core:jackson-databind:2.10.0")
+
 }
 
 tasks.withType<KotlinCompile> {
